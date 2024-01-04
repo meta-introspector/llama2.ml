@@ -1,5 +1,5 @@
-#load "unix.cma";;
 
+(* open Unix *)
 type args = {
   mutable checkpoint : string;
   mutable temperature : float;
@@ -264,7 +264,7 @@ let rec drop n lst =
   | n, _ :: xs -> drop (n - 1) xs
 
 let bpe_encode text vocab vocab_scores =
-  let rec index_opt elem lst =
+  let index_opt elem lst =
     let rec loop idx = function
       | [] -> None
       | x :: xs -> if x = elem then Some idx else loop (idx + 1) xs
@@ -639,7 +639,7 @@ let run args =
           vocab_a.(!next_token)
       in
         print_string token_str;
-        flush stdout;
+        (*        flush stdout;*)
 
       token := !next_token;
       pos := !pos + 1;

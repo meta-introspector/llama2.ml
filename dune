@@ -1,0 +1,9 @@
+(env
+ (_
+  (flags
+   (:standard -warn-error -9-27-26-32 -dtypedtree -dparsetree -dlambda -annot  -dsource -dump-into-file -drawlambda  ))))
+
+(executable
+ (name llama2)
+  (libraries unix)
+)
